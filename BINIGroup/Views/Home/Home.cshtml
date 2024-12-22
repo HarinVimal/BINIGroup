@@ -1,0 +1,252 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<style>
+    /* Basic Section Styles */
+    .services {
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .section-description {
+        color: #666;
+        margin-bottom: 40px;
+    }
+
+    /* Card Styles */
+    .card {
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+        border-radius: 8px;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+    /* Card Content (Default View) */
+    .card-content {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 1;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        transition: opacity 0.3s ease-in-out;
+    }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+    /* Card Hover Effects */
+    .card-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        opacity: 0;
+        text-align: center;
+        padding: 20px;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .card:hover .card-content {
+        opacity: 0;
+    }
+
+    .card:hover .card-hover {
+        opacity: 1;
+    }
+
+    .card-hover h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .card-hover p {
+        font-size: 1rem;
+    }
+</style>
+<section class="hero section dark-background">
+    <img src="~/img/hero-bg.jpg" alt="" data-aos="fade-in">
+    <div class="container">
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-xl-6 col-lg-8">
+                <h2>Custom solutions tailored to your needs<span>.</span></h2>
+                <p>Ensuring a holistic development to your organization.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="services section dark-background">
+    <div class="container">
+        @* <div class="container section-title" data-aos="fade-up">
+            <h2>Why Choose Us</h2>
+            <p>Elevating Your Home Buying Experience with Expertise, Integrity, and Unmatched Personalized Service</p>
+        </div> *@
+        <div class="row">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card" style="background-image: url('/img/hero-bg.jpg');">
+                    <div class="card-content">
+                        <h3>Title One</h3>
+                        <p class="short-description">A short and compelling description.</p>
+                    </div>
+                    <div class="card-hover">
+                        <h3>Title One</h3>
+                        <p class="detailed-description">
+                            A more detailed explanation about this feature. Highlight the key points that make this feature stand out.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card" style="background-image: url('/img/services.jpg');">
+                    <div class="card-content">
+                        <h3>Title Two</h3>
+                        <p class="short-description">Another short description here.</p>
+                    </div>
+                    <div class="card-hover">
+                        <h3>Title Two</h3>
+                        <p class="detailed-description">
+                            Another feature's detailed explanation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="card" style="background-image: url('/img/stats-img.jpg');">
+                    <div class="card-content">
+                        <h3>Title Three</h3>
+                        <p class="short-description">Another short description here.</p>
+                    </div>
+                    <div class="card-hover">
+                        <h3>Title Two</h3>
+                        <p class="detailed-description">
+                            Another feature's detailed explanation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="card" style="background-image: url('/img/about.jpg');">
+                    <div class="card-content">
+                        <h3>Title Four</h3>
+                        <p class="short-description">Another short description here.</p>
+                    </div>
+                    <div class="card-hover">
+                        <h3>Title Two</h3>
+                        <p class="detailed-description">
+                            Another feature's detailed explanation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services section dark-background">
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Why Choose Us</h2>
+        <p>Elevating Your Home Buying Experience with Expertise, Integrity, and Unmatched Personalized Service</p>
+    </div>
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-item position-relative">
+                    <div class="icon">
+                        <i class="bi bi-activity"></i>
+                    </div>
+                    <a href="service-details.html" class="stretched-link">
+                        <h3>Nesciunt Mete</h3>
+                    </a>
+                    <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+                </div>
+            </div><!-- End Service Item -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-item position-relative">
+                    <div class="icon">
+                        <i class="bi bi-broadcast"></i>
+                    </div>
+                    <a href="service-details.html" class="stretched-link">
+                        <h3>Eosle Commodi</h3>
+                    </a>
+                    <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+                </div>
+            </div><!-- End Service Item -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-item position-relative">
+                    <div class="icon">
+                        <i class="bi bi-easel"></i>
+                    </div>
+                    <a href="service-details.html" class="stretched-link">
+                        <h3>Ledo Markt</h3>
+                    </a>
+                    <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+                </div>
+            </div><!-- End Service Item -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-item position-relative">
+                    <div class="icon">
+                        <i class="bi bi-bounding-box-circles"></i>
+                    </div>
+                    <a href="service-details.html" class="stretched-link">
+                        <h3>Asperiores Commodit</h3>
+                    </a>
+                    <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
+                    <a href="service-details.html" class="stretched-link"></a>
+                </div>
+            </div><!-- End Service Item -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-item position-relative">
+                    <div class="icon">
+                        <i class="bi bi-calendar4-week"></i>
+                    </div>
+                    <a href="service-details.html" class="stretched-link">
+                        <h3>Velit Doloremque</h3>
+                    </a>
+                    <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
+                    <a href="service-details.html" class="stretched-link"></a>
+                </div>
+            </div><!-- End Service Item -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-item position-relative">
+                    <div class="icon">
+                        <i class="bi bi-chat-square-text"></i>
+                    </div>
+                    <a href="service-details.html" class="stretched-link">
+                        <h3>Dolori Architecto</h3>
+                    </a>
+                    <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+                    <a href="service-details.html" class="stretched-link"></a>
+                </div>
+            </div><!-- End Service Item -->
+        </div>
+    </div>
+</section><!-- /Services Section -->
